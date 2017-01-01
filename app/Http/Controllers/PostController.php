@@ -53,8 +53,9 @@ class PostController extends Controller
     }
     public function postLikePost(Request $request)
     {
+        
         $post_id = $request['postId'];
-        $is_like = $request['isLike'] === 'true';
+        $is_like = $request['isLike'] === 'true';  
         $update = false;
         $post = Post::find($post_id);
         if (!$post) {
@@ -62,6 +63,7 @@ class PostController extends Controller
         }
         $user = Auth::user();
         $like = $user->likes()->where('post_id', $post_id)->first();
+        if ($like) {
             $already_like = $like->like;
             $update = true;
             if ($already_like == $is_like) {
