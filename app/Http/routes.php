@@ -30,7 +30,7 @@ Route::group(['middlewareGroups' => ['web']], function () {
     Route::get('/dashboard', [
         'uses'=>'PostController@getDashboard',
         'as'=>'dashboard',
-        'routeMiddleware' => 'auth'
+        'middleware' => 'auth'
     ]);
     Route::post('/createpost', [
         'uses' => 'PostController@postCreatePost',
