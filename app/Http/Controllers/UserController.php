@@ -25,7 +25,7 @@ class UserController extends Controller
             $user->password = $password;
             $user->save(); 
            	Auth::login($user);
-            return redirect()->back();
+            return redirect()->route('dashboard');
     }
 	public function postSignIn(Request $request){
                 $this->validate($request, [
