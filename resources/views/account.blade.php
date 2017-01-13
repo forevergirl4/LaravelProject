@@ -14,6 +14,22 @@
                     <input type="text" name="first_name" class="form-control" value="{{ $user->first_name }}" id="first_name">
                 </div>
                 <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" class="form-control" value="{{ $user->last_name }}" id="last_name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" class="form-control" value="{{ $user->phone }}" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" value="{{ $user->email }}" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="enter password here" id="password">
+                </div>
+                <div class="form-group">
                     <label for="image">Image (only .jpg)</label>
                     <input type="file" name="image" class="form-control" id="image">
                 </div>

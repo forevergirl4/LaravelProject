@@ -58,6 +58,10 @@ Route::group(['middlewareGroups' => ['web']], function () {
     'uses' => 'UserController@getAccount',
     'as' => 'account'
 	]);
+    Route::get('/profilepage', [
+    'uses' => 'UserController@getProfilePage',
+    'as' => 'profilepage'
+    ]);
 	Route::post('/updateaccount', [
 	    'uses' => 'UserController@postSaveAccount',
 	    'as' => 'account.save'

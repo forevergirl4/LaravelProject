@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brnd" href="{{ route('dashboard') }}">Brand</a>
+                <a class="navbar-brnd" href="{{ route('dashboard') }}">Nerdy Khaleesi</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,6 +18,7 @@
                         <li><a href="{{ route('logout') }}">Logout</a></li>
                     @else
                         <li><a href="{{ route('account') }}">Account</a></li>
+                        <li><a href="{{ route('profilepage') }}">Profile Page</a></li>
                         <li><a href="{{ route('logout') }}">Logout</a></li>
                     @endif
                 </ul>

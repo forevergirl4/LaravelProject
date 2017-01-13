@@ -17,12 +17,16 @@ class UserController extends Controller
 
             $email = $request['email'];
             $first_name = $request['first_name'];
+            $last_name = $request['last_name'];
+            $phone = $request['phone'];
             $password = bcrypt($request['password']);
 
             $user = new User();
             $user->email = $email;
             $user->first_name = $first_name;
             $user->password = $password;
+            $user->last_name = $last_name;
+            $user->phone = $phone;
             $user->save(); 
            	Auth::login($user);
             return redirect()->route('dashboard');
@@ -42,9 +46,13 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('home');
     }
-        public function getAccount()
+    public function getAccount()
     {
         return view('account', ['user' => Auth::user()]);
+    }
+    public function getProfilePage()
+    {
+        return view('profilepage', ['user' => Auth::user()]);
     }
     public function postSaveAccount(Request $request)
     {
@@ -54,6 +62,10 @@ class UserController extends Controller
         $user = Auth::user();
         $old_name = $user->first_name;
         $user->first_name = $request['first_name'];
+        $user->last_name = $request['last_name'];
+        $user->phone = $request['phone'];
+        $user->email = $request['email'];
+        $user->password = bcrypt($request['password']);
         $user->update();
         $file = $request->file('image');
         $filename = $request['first_name'] . '-' . $user->id . '.jpg';
